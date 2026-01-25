@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { User, BriefcaseBusiness, Wrench } from "lucide-react";
+import { User, BriefcaseBusiness, Wrench, ArrowDown } from "lucide-react";
 
 export default function About() {
     const [activeSection, setActiveSection] = useState("Who am i?");
@@ -72,12 +72,131 @@ export default function About() {
 
                         {activeSection === "My Experience" && (
                             <div>
-                                <h2 className="text-3xl font-semibold mb-6 text-black dark:text-zinc-50">
+                                <h2 className="text-3xl font-semibold mb-8 text-black dark:text-zinc-50">
                                     My Experience
                                 </h2>
-                                <p className="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-                                    Content for "My Experience" section goes here.
-                                </p>
+                                <div className="space-y-6">
+                                    {/* Project Manager @ Hola */}
+                                    <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-6">
+                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-1">
+                                            Project Manager @ Hola
+                                        </h3>
+                                        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+                                            Feb 2025 – Present
+                                        </p>
+                                        <ul className="space-y-2 text-base leading-7 text-zinc-600 dark:text-zinc-400">
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-zinc-400 dark:text-zinc-500 mt-1">•</span>
+                                                <span><strong className="text-zinc-900 dark:text-zinc-200">Product Strategy:</strong> Owning the product lifecycle by defining vision and requirements based on user feedback and market trends.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-zinc-400 dark:text-zinc-500 mt-1">•</span>
+                                                <span><strong className="text-zinc-900 dark:text-zinc-200">AI & Automation:</strong> Developing internal AI solutions (n8n, OpenRouter) that automated customer support, achieving up to a 48% ticket closure rate.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-zinc-400 dark:text-zinc-500 mt-1">•</span>
+                                                <span><strong className="text-zinc-900 dark:text-zinc-200">Technical Writing:</strong> Managing comprehensive documentation (API specs, tutorials) using Mintlify and GitHub to improve user adoption.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-zinc-400 dark:text-zinc-500 mt-1">•</span>
+                                                <span><strong className="text-zinc-900 dark:text-zinc-200">Operations:</strong> Leading QA testing for new features and managing internal tools like Status Pages and AI Dashboards.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="flex justify-center">
+                                        <ArrowDown size={24} className="text-zinc-400 dark:text-zinc-500" />
+                                    </div>
+
+                                    {/* QA & NOC Supervisor @ Bright Data */}
+                                    <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-6">
+                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-1">
+                                            QA & NOC Supervisor @ Bright Data
+                                        </h3>
+                                        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+                                            May 2024 – Feb 2025
+                                        </p>
+                                        <ul className="space-y-2 text-base leading-7 text-zinc-600 dark:text-zinc-400">
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-zinc-400 dark:text-zinc-500 mt-1">•</span>
+                                                <span><strong className="text-zinc-900 dark:text-zinc-200">Leadership:</strong> Directed team workflows, mentored staff, and conducted interviews for new candidates.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-zinc-400 dark:text-zinc-500 mt-1">•</span>
+                                                <span><strong className="text-zinc-900 dark:text-zinc-200">Incident Management:</strong> Managed the full lifecycle of technical incidents, from detection and analysis to R&D notification.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-zinc-400 dark:text-zinc-500 mt-1">•</span>
+                                                <span><strong className="text-zinc-900 dark:text-zinc-200">Process Improvement:</strong> Optimized operational efficiency through continuous process evaluation and cross-departmental collaboration.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="flex justify-center">
+                                        <ArrowDown size={24} className="text-zinc-400 dark:text-zinc-500" />
+                                    </div>
+
+                                    {/* QA & NOC Engineer @ Bright Data */}
+                                    <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-6">
+                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-1">
+                                            QA & NOC Engineer @ Bright Data
+                                        </h3>
+                                        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+                                            Jun 2023 – May 2024
+                                        </p>
+                                        <ul className="space-y-2 text-base leading-7 text-zinc-600 dark:text-zinc-400">
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-zinc-400 dark:text-zinc-500 mt-1">•</span>
+                                                <span><strong className="text-zinc-900 dark:text-zinc-200">Technical Monitoring:</strong> Maintained network infrastructure and monitored production servers to resolve errors in real-time.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-zinc-400 dark:text-zinc-500 mt-1">•</span>
+                                                <span><strong className="text-zinc-900 dark:text-zinc-200">Testing:</strong> Executed daily/weekly QA tests, reviewed logs, and documented software bugs across Linux, Windows, and Apple systems.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="flex justify-center">
+                                        <ArrowDown size={24} className="text-zinc-400 dark:text-zinc-500" />
+                                    </div>
+
+                                    {/* Front Desk Staff @ Prima Hotels */}
+                                    <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-6">
+                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-1">
+                                            Front Desk Staff @ Prima Hotels Israel
+                                        </h3>
+                                        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+                                            Jul 2022 – Jun 2023
+                                        </p>
+                                        <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
+                                            Managed reservations, guest check-ins/outs, and provided high-level customer service in a fast-paced environment.
+                                        </p>
+                                    </div>
+
+                                    <div className="flex justify-center">
+                                        <ArrowDown size={24} className="text-zinc-400 dark:text-zinc-500" />
+                                    </div>
+
+                                    {/* Helicopter Mechanic @ Israeli Air Force */}
+                                    <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-6">
+                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-1">
+                                            Helicopter Mechanic @ Israeli Air Force
+                                        </h3>
+                                        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+                                            Nov 2017 – Jun 2020
+                                        </p>
+                                        <ul className="space-y-2 text-base leading-7 text-zinc-600 dark:text-zinc-400">
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-zinc-400 dark:text-zinc-500 mt-1">•</span>
+                                                <span><strong className="text-zinc-900 dark:text-zinc-200">Rank:</strong> Discharged as Staff Sergeant.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-zinc-400 dark:text-zinc-500 mt-1">•</span>
+                                                <span><strong className="text-zinc-900 dark:text-zinc-200">Technical Expertise:</strong> Resolved complex malfunctions on advanced equipment and trained fellow mechanics on technical workflows.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         )}
 
