@@ -14,7 +14,7 @@ export default function About() {
 
     return (
         <div className="flex min-h-screen items-start justify-center bg-zinc-50 font-sans dark:bg-black">
-            <main className="flex min-h-screen w-full max-w-7xl flex-row gap-8 py-32 px-16 bg-white dark:bg-black">
+            <main className="flex min-h-screen w-full max-w-7xl flex-row gap-8 py-10 px-16 bg-white dark:bg-black">
                 {/* Sidebar */}
                 <aside className="flex-shrink-0 w-64">
                     <div className="sticky top-32">
