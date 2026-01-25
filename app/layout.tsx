@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Alegreya } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const alegreya = Alegreya({
+  variable: "--font-alegreya",
   subsets: ["latin"],
 });
 
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} antialiased`}
+        className={`${alegreya.variable} antialiased`}
       >
         <Navbar />
         {children}

@@ -1,4 +1,6 @@
-import Link from "next/link";
+import HomeTab from "./navbar/HomeTab";
+import AboutTab from "./navbar/AboutTab";
+import ContactTab from "./navbar/ContactTab";
 
 export default function Navbar() {
   return (
@@ -7,34 +9,19 @@ export default function Navbar() {
         <div className="flex items-center h-16 relative">
           {/* Left side - Name and Title */}
           <div className="flex flex-col flex-1">
-            <span className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+            <span className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
               Alex Gurinovich
             </span>
-            <span className="text-sm text-zinc-600 dark:text-zinc-400">
+            <span className="text-normal text-zinc-600 dark:text-zinc-400">
               Product Manager Portfolio
             </span>
           </div>
 
           {/* Center - Navigation tabs */}
           <div className="flex space-x-8 absolute left-1/2 transform -translate-x-1/2">
-            <Link
-              href="/"
-              className="inline-flex flex-col items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors"
-            >
-              <span>🏠 Home</span>
-            </Link>
-            <Link
-              href="/about"
-              className="inline-flex flex-col items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors"
-            >
-              <span>👤 About</span>
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex flex-col items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors"
-            >
-              <span>📧 Contact</span>
-            </Link>
+            <HomeTab />
+            <AboutTab />
+            <ContactTab />
           </div>
 
           {/* Right side - Empty for balance */}
@@ -44,4 +31,6 @@ export default function Navbar() {
     </nav>
   );
 }
+
+
 
