@@ -26,8 +26,8 @@ export default function About() {
                                         key={section.name}
                                         onClick={() => setActiveSection(section.name)}
                                         className={`flex items-center gap-3 text-left px-4 py-3 rounded-lg text-base font-medium transition-colors ${activeSection === section.name
-                                                ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-50"
-                                                : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-zinc-50"
+                                            ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-50"
+                                            : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-zinc-50"
                                             }`}
                                     >
                                         <Icon size={20} />
@@ -202,12 +202,102 @@ export default function About() {
 
                         {activeSection === "My Projects" && (
                             <div>
-                                <h2 className="text-3xl font-semibold mb-6 text-black dark:text-zinc-50">
+                                <h2 className="text-3xl font-semibold mb-8 text-black dark:text-zinc-50">
                                     My Projects
                                 </h2>
-                                <p className="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-                                    Content for "My Projects" section goes here.
-                                </p>
+                                <div className="space-y-6">
+                                    {/* Zendesk & Mintlify Automation */}
+                                    <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-6 border border-blue-100 dark:border-blue-900/50">
+                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-3">
+                                            Zendesk & Mintlify Automation
+                                        </h3>
+                                        <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
+                                            I built an AI-powered n8n workflow that connects Zendesk support with Mintlify documentation. The system automatically scans your docs for relevant answers to customer inquiries and generates instant, accurate replies. This bridge significantly reduces manual support volume by leveraging existing technical content for real-time problem-solving.
+                                        </p>
+                                        <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
+                                            <a href="https://n8n.io/workflows/5046-automate-customer-support-with-mintlify-documentation-and-zendesk-ai-agent/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium">Link to the project</a>
+                                        </p>
+                                    </div>
+
+                                    {/* Custom n8n Nodes */}
+                                    <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-6 border border-blue-100 dark:border-blue-900/50">
+                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-3">
+                                            Custom n8n Nodes
+                                        </h3>
+                                        <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
+                                            I developed custom n8n nodes to simplify API interactions for{" "}
+                                            <a
+                                                href="https://toolip.io/"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium"
+                                            >
+                                                Toolip.io
+                                            </a>{" "}
+                                            and{" "}
+                                            <a
+                                                href="https://browser.ai/"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium"
+                                            >
+                                                BrowserAI
+                                            </a>
+                                            . By building these native integrations, I made complex automation workflows accessible and "no-brainer" simple. This project demonstrates how custom tooling can bridge the gap between powerful APIs and seamless, user-friendly automation.
+                                        </p>
+                                        <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
+                                            <a href="https://www.npmjs.com/package/n8n-nodes-toolip" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium">Toolip.io node</a>
+                                        </p>
+                                        <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
+                                            <a href="https://www.npmjs.com/package/n8n-nodes-browserai" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium">BrowserAI node</a>
+                                        </p>
+                                    </div>
+
+                                    {/* AI-Powered F1 Newsletter */}
+                                    <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-6 border border-blue-100 dark:border-blue-900/50">
+                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-3">
+                                            AI-Powered F1 Newsletter
+                                        </h3>
+                                        <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
+                                            Combining my passion for F1 with AI, I built an automated newsletter via n8n and{" "}
+                                            <a
+                                                href="https://brightdata.com/ai/mcp-server"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium"
+                                            >
+                                                Bright Data's MCP
+                                            </a>
+                                            . The system hunts down, collects, and translates the latest global F1 news into Hebrew, delivering it directly to a dedicated channel. It's a hands-off solution for staying updated in real-time.
+                                        </p>
+                                        <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
+                                            <a href="https://t.me/f1israel" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium">Join the Telegram channel</a>
+                                        </p>
+                                    </div>
+
+                                    {/* ChatBot Dashboard */}
+                                    <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-6 border border-blue-100 dark:border-blue-900/50">
+                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-3">
+                                            ChatBot Dashboard
+                                        </h3>
+                                        <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
+                                            I designed a minimalistic dashboard for monitoring enterprise-level AI support agents. Using vibe-coding tools, I transformed raw interaction data into a visual "messenger" style interface. It provides the product team with crucial KPIs, including conversation volume, ticket conversion rates, and the most common customer topics.
+                                        </p>
+                                    </div>
+
+                                    {/* Scraping Mage */}
+                                    <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-6 border border-blue-100 dark:border-blue-900/50">
+                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-3">
+                                            Scraping Mage
+                                        </h3>
+                                        <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
+                                            This personal RAG project allows users to "chat" with any website. Given a URL, the "Mage" scrapes the entire site—customizable by layers or page count—and processes the data so you can ask questions via a WhatsApp-style interface. It turns static web content into a dynamic, conversational knowledge base.
+                                        </p>
+                                        <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
+                                            <a href="https://github.com/AlexGuri99/scraping-mage" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium">Link to repo</a>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         )}
                     </div>
@@ -216,4 +306,3 @@ export default function About() {
         </div>
     );
 }
-
