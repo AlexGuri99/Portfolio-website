@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { User, BriefcaseBusiness, Wrench, ArrowDown } from "lucide-react";
+import { User, BriefcaseBusiness, Wrench, ArrowUp } from "lucide-react";
 
 export default function About() {
     const [activeSection, setActiveSection] = useState("Who am i?");
@@ -14,23 +14,23 @@ export default function About() {
 
     return (
         <div className="flex min-h-screen items-start justify-center bg-zinc-50 font-sans dark:bg-black">
-            <main className="flex min-h-screen w-full max-w-7xl flex-row gap-8 py-10 px-16 bg-white dark:bg-black">
-                {/* Sidebar */}
-                <aside className="flex-shrink-0 w-64">
-                    <div className="sticky top-32">
-                        <nav className="flex flex-col gap-2">
+            <main className="flex min-h-screen w-full max-w-7xl flex-col md:flex-row gap-6 md:gap-8 py-8 sm:py-10 px-4 sm:px-8 md:px-16 bg-white dark:bg-black">
+                {/* Sidebar - horizontal tabs on mobile, vertical on desktop */}
+                <aside className="flex-shrink-0 w-full md:w-64">
+                    <div className="md:sticky md:top-24">
+                        <nav className="flex flex-row md:flex-col gap-2 overflow-x-auto md:overflow-visible pb-2 md:pb-0 -mx-1 px-1 md:mx-0 md:px-0">
                             {sections.map((section) => {
                                 const Icon = section.icon;
                                 return (
                                     <button
                                         key={section.name}
                                         onClick={() => setActiveSection(section.name)}
-                                        className={`flex items-center gap-3 text-left px-4 py-3 rounded-lg text-base font-medium transition-colors ${activeSection === section.name
+                                        className={`flex items-center gap-2 md:gap-3 text-left px-3 py-2.5 md:px-4 md:py-3 rounded-lg text-sm md:text-base font-medium transition-colors whitespace-nowrap flex-shrink-0 ${activeSection === section.name
                                             ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-50"
                                             : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-zinc-50"
                                             }`}
                                     >
-                                        <Icon size={20} />
+                                        <Icon size={18} className="md:w-5 md:h-5 flex-shrink-0" />
                                         {section.name}
                                     </button>
                                 );
@@ -40,14 +40,14 @@ export default function About() {
                 </aside>
 
                 {/* Content Area */}
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                     <div className="max-w-3xl">
                         {activeSection === "Who am i?" && (
                             <div>
-                                <h2 className="text-3xl font-semibold mb-6 text-black dark:text-zinc-50">
+                                <h2 className="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6 text-black dark:text-zinc-50">
                                     Who am i?
                                 </h2>
-                                <div className="space-y-4 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+                                <div className="space-y-4 text-base sm:text-lg leading-7 sm:leading-8 text-zinc-600 dark:text-zinc-400">
                                     <p>
                                         I'm the average 26 years old, living in Petah Tikva, Israel with my girlfriend, Danielle, and our two fish.
                                     </p>
@@ -72,16 +72,16 @@ export default function About() {
 
                         {activeSection === "My Experience" && (
                             <div>
-                                <h2 className="text-3xl font-semibold mb-8 text-black dark:text-zinc-50">
+                                <h2 className="text-2xl sm:text-3xl font-semibold mb-6 sm:mb-8 text-black dark:text-zinc-50">
                                     My Experience
                                 </h2>
-                                <div className="space-y-6">
+                                <div className="space-y-4 sm:space-y-6">
                                     {/* Project Manager @ Hola */}
-                                    <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-6">
-                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-1">
+                                    <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-4 sm:p-6">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-zinc-50 mb-1">
                                             Project Manager @ Hola
                                         </h3>
-                                        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+                                        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-3 sm:mb-4">
                                             Feb 2025 – Present
                                         </p>
                                         <ul className="space-y-2 text-base leading-7 text-zinc-600 dark:text-zinc-400">
@@ -105,15 +105,15 @@ export default function About() {
                                     </div>
 
                                     <div className="flex justify-center">
-                                        <ArrowDown size={24} className="text-zinc-400 dark:text-zinc-500" />
+                                        <ArrowUp size={24} className="text-zinc-400 dark:text-zinc-500" />
                                     </div>
 
                                     {/* QA & NOC Supervisor @ Bright Data */}
-                                    <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-6">
-                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-1">
+                                    <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-4 sm:p-6">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-zinc-50 mb-1">
                                             QA & NOC Supervisor @ Bright Data
                                         </h3>
-                                        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+                                        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-3 sm:mb-4">
                                             May 2024 – Feb 2025
                                         </p>
                                         <ul className="space-y-2 text-base leading-7 text-zinc-600 dark:text-zinc-400">
@@ -133,15 +133,15 @@ export default function About() {
                                     </div>
 
                                     <div className="flex justify-center">
-                                        <ArrowDown size={24} className="text-zinc-400 dark:text-zinc-500" />
+                                        <ArrowUp size={24} className="text-zinc-400 dark:text-zinc-500" />
                                     </div>
 
                                     {/* QA & NOC Engineer @ Bright Data */}
-                                    <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-6">
-                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-1">
+                                    <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-4 sm:p-6">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-zinc-50 mb-1">
                                             QA & NOC Engineer @ Bright Data
                                         </h3>
-                                        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+                                        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-3 sm:mb-4">
                                             Jun 2023 – May 2024
                                         </p>
                                         <ul className="space-y-2 text-base leading-7 text-zinc-600 dark:text-zinc-400">
@@ -157,15 +157,15 @@ export default function About() {
                                     </div>
 
                                     <div className="flex justify-center">
-                                        <ArrowDown size={24} className="text-zinc-400 dark:text-zinc-500" />
+                                        <ArrowUp size={24} className="text-zinc-400 dark:text-zinc-500" />
                                     </div>
 
                                     {/* Front Desk Staff @ Prima Hotels */}
-                                    <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-6">
-                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-1">
+                                    <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-4 sm:p-6">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-zinc-50 mb-1">
                                             Front Desk Staff @ Prima Hotels Israel
                                         </h3>
-                                        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+                                        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-3 sm:mb-4">
                                             Jul 2022 – Jun 2023
                                         </p>
                                         <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
@@ -174,15 +174,15 @@ export default function About() {
                                     </div>
 
                                     <div className="flex justify-center">
-                                        <ArrowDown size={24} className="text-zinc-400 dark:text-zinc-500" />
+                                        <ArrowUp size={24} className="text-zinc-400 dark:text-zinc-500" />
                                     </div>
 
                                     {/* Helicopter Mechanic @ Israeli Air Force */}
-                                    <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-6">
-                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-1">
+                                    <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-4 sm:p-6">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-zinc-50 mb-1">
                                             Helicopter Mechanic @ Israeli Air Force
                                         </h3>
-                                        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+                                        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-3 sm:mb-4">
                                             Nov 2017 – Jun 2020
                                         </p>
                                         <ul className="space-y-2 text-base leading-7 text-zinc-600 dark:text-zinc-400">
@@ -202,26 +202,58 @@ export default function About() {
 
                         {activeSection === "My Projects" && (
                             <div>
-                                <h2 className="text-3xl font-semibold mb-8 text-black dark:text-zinc-50">
+                                <h2 className="text-2xl sm:text-3xl font-semibold mb-6 sm:mb-8 text-black dark:text-zinc-50">
                                     My Projects
                                 </h2>
-                                <div className="space-y-6">
-                                    {/* Zendesk & Mintlify Automation */}
-                                    <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-6 border border-blue-100 dark:border-blue-900/50">
-                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-3">
-                                            Zendesk & Mintlify Automation
+                                <div className="space-y-4 sm:space-y-6">
+                                    {/* Scraping Mage */}
+                                    <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-4 sm:p-6 border border-blue-100 dark:border-blue-900/50">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-zinc-50 mb-2 sm:mb-3">
+                                            Scraping Mage
                                         </h3>
                                         <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
-                                            I built an AI-powered n8n workflow that connects Zendesk support with Mintlify documentation. The system automatically scans your docs for relevant answers to customer inquiries and generates instant, accurate replies. This bridge significantly reduces manual support volume by leveraging existing technical content for real-time problem-solving.
+                                            This personal RAG project allows users to "chat" with any website. Given a URL, the "Mage" scrapes the entire site—customizable by layers or page count—and processes the data so you can ask questions via a WhatsApp-style interface. It turns static web content into a dynamic, conversational knowledge base.
                                         </p>
                                         <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
-                                            <a href="https://n8n.io/workflows/5046-automate-customer-support-with-mintlify-documentation-and-zendesk-ai-agent/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium">Link to the project</a>
+                                            <a href="https://github.com/AlexGuri99/scraping-mage" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium">Link to repo</a>
+                                        </p>
+                                    </div>
+
+                                    {/* ChatBot Dashboard */}
+                                    <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-4 sm:p-6 border border-blue-100 dark:border-blue-900/50">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-zinc-50 mb-2 sm:mb-3">
+                                            ChatBot Dashboard
+                                        </h3>
+                                        <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
+                                            I designed a minimalistic dashboard for monitoring enterprise-level AI support agents. Using vibe-coding tools, I transformed raw interaction data into a visual "messenger" style interface. It provides the product team with crucial KPIs, including conversation volume, ticket conversion rates, and the most common customer topics.
+                                        </p>
+                                    </div>
+
+                                    {/* AI-Powered F1 Newsletter */}
+                                    <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-4 sm:p-6 border border-blue-100 dark:border-blue-900/50">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-zinc-50 mb-2 sm:mb-3">
+                                            AI-Powered F1 Newsletter
+                                        </h3>
+                                        <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
+                                            Combining my passion for F1 with AI, I built an automated newsletter via n8n and{" "}
+                                            <a
+                                                href="https://brightdata.com/ai/mcp-server"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium"
+                                            >
+                                                Bright Data's MCP
+                                            </a>
+                                            . The system hunts down, collects, and translates the latest global F1 news into Hebrew, delivering it directly to a dedicated channel. It's a hands-off solution for staying updated in real-time.
+                                        </p>
+                                        <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
+                                            <a href="https://t.me/f1israel" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium">Join the Telegram channel</a>
                                         </p>
                                     </div>
 
                                     {/* Custom n8n Nodes */}
-                                    <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-6 border border-blue-100 dark:border-blue-900/50">
-                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-3">
+                                    <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-4 sm:p-6 border border-blue-100 dark:border-blue-900/50">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-zinc-50 mb-2 sm:mb-3">
                                             Custom n8n Nodes
                                         </h3>
                                         <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
@@ -253,48 +285,16 @@ export default function About() {
                                         </p>
                                     </div>
 
-                                    {/* AI-Powered F1 Newsletter */}
-                                    <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-6 border border-blue-100 dark:border-blue-900/50">
-                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-3">
-                                            AI-Powered F1 Newsletter
+                                    {/* Zendesk & Mintlify Automation */}
+                                    <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-4 sm:p-6 border border-blue-100 dark:border-blue-900/50">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-zinc-50 mb-2 sm:mb-3">
+                                            Zendesk & Mintlify Automation
                                         </h3>
                                         <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
-                                            Combining my passion for F1 with AI, I built an automated newsletter via n8n and{" "}
-                                            <a
-                                                href="https://brightdata.com/ai/mcp-server"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium"
-                                            >
-                                                Bright Data's MCP
-                                            </a>
-                                            . The system hunts down, collects, and translates the latest global F1 news into Hebrew, delivering it directly to a dedicated channel. It's a hands-off solution for staying updated in real-time.
+                                            I built an AI-powered n8n workflow that connects Zendesk support with Mintlify documentation. The system automatically scans your docs for relevant answers to customer inquiries and generates instant, accurate replies. This bridge significantly reduces manual support volume by leveraging existing technical content for real-time problem-solving.
                                         </p>
                                         <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
-                                            <a href="https://t.me/f1israel" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium">Join the Telegram channel</a>
-                                        </p>
-                                    </div>
-
-                                    {/* ChatBot Dashboard */}
-                                    <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-6 border border-blue-100 dark:border-blue-900/50">
-                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-3">
-                                            ChatBot Dashboard
-                                        </h3>
-                                        <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
-                                            I designed a minimalistic dashboard for monitoring enterprise-level AI support agents. Using vibe-coding tools, I transformed raw interaction data into a visual "messenger" style interface. It provides the product team with crucial KPIs, including conversation volume, ticket conversion rates, and the most common customer topics.
-                                        </p>
-                                    </div>
-
-                                    {/* Scraping Mage */}
-                                    <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-6 border border-blue-100 dark:border-blue-900/50">
-                                        <h3 className="text-xl font-semibold text-black dark:text-zinc-50 mb-3">
-                                            Scraping Mage
-                                        </h3>
-                                        <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
-                                            This personal RAG project allows users to "chat" with any website. Given a URL, the "Mage" scrapes the entire site—customizable by layers or page count—and processes the data so you can ask questions via a WhatsApp-style interface. It turns static web content into a dynamic, conversational knowledge base.
-                                        </p>
-                                        <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
-                                            <a href="https://github.com/AlexGuri99/scraping-mage" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium">Link to repo</a>
+                                            <a href="https://n8n.io/workflows/5046-automate-customer-support-with-mintlify-documentation-and-zendesk-ai-agent/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium">Link to the project</a>
                                         </p>
                                     </div>
                                 </div>
