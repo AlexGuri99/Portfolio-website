@@ -3,6 +3,33 @@
 import { useState } from "react";
 import { User, BriefcaseBusiness, Wrench, ArrowUp } from "lucide-react";
 
+const ProjectDetails = ({ goal, learning }: { goal: string; learning: string }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <div className="mt-4">
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+            >
+                {isOpen ? "Show less" : "The takeaways..."}
+                <ArrowUp size={14} className={`transition-transform duration-300 ${isOpen ? "" : "rotate-180"}`} />
+            </button>
+
+            <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0"}`}>
+                <div className="overflow-hidden space-y-3 border-t border-blue-200 dark:border-blue-800/50 pt-4">
+                    <p className="text-sm leading-6 text-zinc-800 dark:text-zinc-200">
+                        <strong className="text-blue-700 dark:text-blue-400">The Goal:</strong> {goal}
+                    </p>
+                    <p className="text-sm leading-6 text-zinc-800 dark:text-zinc-200">
+                        <strong className="text-blue-700 dark:text-blue-400">What it taught me:</strong> {learning}
+                    </p>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 export default function About() {
     const [activeSection, setActiveSection] = useState("Who am i?");
 
@@ -212,11 +239,15 @@ export default function About() {
                                             Scraping Mage
                                         </h3>
                                         <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
-                                            This personal RAG project allows users to "chat" with any website. Given a URL, the "Mage" scrapes the entire site—customizable by layers or page count—and processes the data so you can ask questions via a WhatsApp-style interface. It turns static web content into a dynamic, conversational knowledge base.
+                                            This personal RAG project allows users to "chat" with any website. Given a URL, the "Mage" scrapes the entire site, customizable by layers or page count, and processes the data so you can ask questions via a WhatsApp-style interface. It turns static web content into a dynamic, conversational knowledge base.
                                         </p>
                                         <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
                                             <a href="https://github.com/AlexGuri99/scraping-mage" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium">Link to repo</a>
                                         </p>
+                                        <ProjectDetails
+                                            goal="To transform static websites into interactive, conversational knowledge bases using RAG and a WhatsApp-style interface."
+                                            learning="I learned how to manage complex data ingestion pipelines and the importance of data chunking and vector embeddings."
+                                        />
                                     </div>
 
                                     {/* ChatBot Dashboard */}
@@ -227,6 +258,10 @@ export default function About() {
                                         <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
                                             I designed a minimalistic dashboard for monitoring enterprise-level AI support agents. Using vibe-coding tools, I transformed raw interaction data into a visual "messenger" style interface. It provides the product team with crucial KPIs, including conversation volume, ticket conversion rates, and the most common customer topics.
                                         </p>
+                                        <ProjectDetails
+                                            goal="To provide a high-level visual monitoring tool for enterprise AI agents, turning raw logs into actionable business KPIs."
+                                            learning="This project sharpened my ability to translate technical metrics (interaction data) into product-driven insights (conversion rates) that non-technical stakeholders can value."
+                                        />
                                     </div>
 
                                     {/* AI-Powered F1 Newsletter */}
@@ -249,6 +284,10 @@ export default function About() {
                                         <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
                                             <a href="https://t.me/f1israel" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium">Join the Telegram channel</a>
                                         </p>
+                                        <ProjectDetails
+                                            goal="To automate the discovery, translation, and delivery of global Formula 1 news to a Hebrew-speaking audience in real-time."
+                                            learning="It taught me the power of the Model Context Protocol (MCP) and how to orchestrate multi-step automated workflows that handle cross-language content at scale."
+                                        />
                                     </div>
 
                                     {/* Custom n8n Nodes */}
@@ -283,6 +322,10 @@ export default function About() {
                                         <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
                                             <a href="https://www.npmjs.com/package/n8n-nodes-browserai" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium">BrowserAI node</a>
                                         </p>
+                                        <ProjectDetails
+                                            goal="To bridge the gap between powerful browser-automation APIs and no-code users by building native, 'plug-and-play' integrations."
+                                            learning="I gained a deep understanding of API architecture and NPM package development, realizing that great tooling is about removing friction for the end user."
+                                        />
                                     </div>
 
                                     {/* Zendesk & Mintlify Automation */}
@@ -296,6 +339,10 @@ export default function About() {
                                         <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
                                             <a href="https://n8n.io/workflows/5046-automate-customer-support-with-mintlify-documentation-and-zendesk-ai-agent/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium">Link to the project</a>
                                         </p>
+                                        <ProjectDetails
+                                            goal="To reduce customer support overhead by automatically resolving tickets using existing technical documentation as a primary source of truth."
+                                            learning="This taught me the practical efficiency of 'Documentation-as-a-Service' and how AI can drastically improve operational margins by killing manual, repetitive tasks."
+                                        />
                                     </div>
                                 </div>
                             </div>
