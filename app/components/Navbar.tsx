@@ -13,7 +13,7 @@ export default function Navbar() {
               Alex Gurinovich
             </span>
             <span className="text-sm sm:text-normal text-zinc-600 dark:text-zinc-400">
-              Product Manager Portfolio
+              Portfolio
             </span>
           </div>
 
