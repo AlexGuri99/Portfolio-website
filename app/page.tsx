@@ -24,7 +24,7 @@ export default function Home() {
           {/* Text */}
           <div className="flex-1 min-w-0 w-full">
             <p className="text-base sm:text-lg leading-7 sm:leading-8 text-zinc-600 dark:text-zinc-400">
-              Hi, I'm Alex. Currently a Project Manager, aspiring Product Manager, and automation geek obsessed with building smart, AI-driven workflows and testing new features. Throughout my career, I've specialized in hooking up LLMs with tools like n8n and BrowserAI and proxies to handle the heavy lifting. From shipping Telegram bots, scraping, RAG to automated data extraction, I love using serverless tech to kill manual grunt work, solve operational headaches, and make digital processes run way smoother, faster, and more efficiently.
+              Hi, I'm Alex. Currently a Project Manager, tech professional, and automation geek obsessed with building smart, AI-driven workflows and testing new features. Throughout my career, I've specialized in hooking up LLMs with tools like n8n and BrowserAI and proxies to handle the heavy lifting. From shipping Telegram bots, scraping, RAG to automated data extraction, I love using serverless tech to kill manual grunt work, solve operational headaches, and make digital processes run way smoother, faster, and more efficiently.
             </p>
           </div>
         </div>
