@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { User, BriefcaseBusiness, Wrench, ArrowUp } from "lucide-react";
+import { User, BriefcaseBusiness, Wrench, ArrowUp, GraduationCap } from "lucide-react";
 
 const ProjectDetails = ({ goal, learning }: { goal: string; learning: string }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -37,6 +37,7 @@ export default function About() {
         { name: "Who am i?", icon: User },
         { name: "My Experience", icon: BriefcaseBusiness },
         { name: "My Projects", icon: Wrench },
+        { name: "My Certificates", icon: GraduationCap },
     ];
 
     return (
@@ -347,6 +348,45 @@ export default function About() {
                                 </div>
                             </div>
                         )}
+
+                        {activeSection === "My Certificates" && (
+    <div>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-6 sm:mb-8 text-black dark:text-zinc-50">
+            My Certificates
+        </h2>
+        <div className="space-y-4 sm:space-y-6">
+            {/* B.Sc. Computer Science */}
+            <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-zinc-50 mb-1">
+                    B.Sc. in Computer Science
+                </h3>
+                <p className="text-zinc-600 dark:text-zinc-400 font-medium mb-1">
+                    Holon Institute of Technology (HIT)
+                </p>
+                <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                    Petah Tikva / Holon, Israel
+                </p>
+            </div>
+
+            <div className="flex justify-center">
+                <ArrowUp size={24} className="text-zinc-400 dark:text-zinc-500" />
+            </div>
+
+            {/* USPA Skydiving License */}
+            <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-zinc-50 mb-1">
+                    USPA Skydiving Certification
+                </h3>
+                <p className="text-zinc-600 dark:text-zinc-400 font-medium">
+                    United States Parachute Association
+                </p>
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-2">
+                    Actively pursuing advanced license grades (A-D) and international safety ratings.
+                </p>
+            </div>
+        </div>
+    </div>
+)}
                     </div>
                 </div>
             </main>
