@@ -103,10 +103,10 @@ export default function About() {
                                     My Experience
                                 </h2>
                                 <div className="space-y-4 sm:space-y-6">
-                                    {/* Project Manager @ Hola */}
+                                    {/* Project Manager @ Bright Data */}
                                     <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-4 sm:p-6">
                                         <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-zinc-50 mb-1">
-                                            Project Manager @ Hola
+                                            Project Manager @ Bright Data
                                         </h3>
                                         <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-3 sm:mb-4">
                                             Feb 2025 – Present
